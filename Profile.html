@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - Filerrrr</title>
+    <link rel="stylesheet" href="ProfileStyle.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Your Profile</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="/upload">Upload</a></li>
+                    <li><a href="/logout">Logout</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <section class="profile-info">
+        <div class="container">
+            <h2>Your Profile Information</h2>
+            <p><strong>Username:</strong> {{ user.username }}</p>
+            <p><strong>Email:</strong> {{ user.email }}</p>
+        </div>
+    </section>
+    
+    <section class="uploaded-files">
+        <div class="container">
+            <h2>Uploaded Files</h2>
+            <ul>
+                {% for file in user.files %}
+                    <li>
+                        <h3>{{ file.title }}</h3>
+                        <p>{{ file.description }}</p>
+                        <p><strong>Visibility Timer:</strong> {{ file.visibility_timer }} hours</p>
+                        <a href="{{ file.download_url }}" class="btn">Download</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Filerrrr</p>
+        </div>
+    </footer>
+</body>
+</html>

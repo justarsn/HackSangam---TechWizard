@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload - Filerrrr</title>
+    <link rel="stylesheet" href="UploadStyle.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Upload Your File</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="Profile.html">Profile</a></li>
+                    <li><a href="/logout">Logout</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <section class="upload-form">
+        <div class="container">
+            <form action="/upload" method="POST" enctype="multipart/form-data">
+                <label for="title">Title</label>
+                <input type="text" id="title" name="title" required>
+                
+                <label for="description">Description</label>
+                <textarea id="description" name="description" rows="4" required></textarea>
+                
+                <label for="file">Choose File</label>
+                <input type="file" id="file" name="file" required>
+                
+                <label for="visibility_timer">Visibility Timer (hours)</label>
+                <input type="number" id="visibility_timer" name="visibility_timer" min="1" required>
+                
+                <button type="submit" class="btn">Upload</button>
+            </form>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Filerrrr</p>
+        </div>
+    </footer>
+</body>
+</html>
