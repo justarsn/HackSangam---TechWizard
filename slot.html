@@ -3,122 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome Back</title>
-    <style>
-        /* Your CSS styles here */
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f5f5f5;
-        }
-
-        header {
-            background-color: #333;
-            color: #fff;
-            padding: 20px 0;
-            text-align: center;
-        }
-
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        .welcome-message {
-            margin-top: 30px;
-            text-align: center;
-        }
-
-        .welcome-message p {
-            font-size: 1.2rem;
-        }
-
-        footer {
-            background-color: #333;
-            color: #fff;
-            padding: 20px 0;
-            text-align: center;
-            margin-top: auto; /* Align footer to bottom */
-        }
-
-        /* Login form styles */
-        .login-form {
-            margin-top: 30px;
-            text-align: center;
-        }
-
-        .login-form input[type="text"],
-        .login-form input[type="password"] {
-            padding: 10px;
-            margin-bottom: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-
-        .login-form button {
-            padding: 10px 20px;
-            background-color: #333;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        .login-form button:hover {
-            background-color: #555;
-        }
-    </style>
+    <title>Image Toggler</title>
+    <link rel="stylesheet" href="SlotStyle.css">
 </head>
 <body>
-    <header>
-        <h1>Welcome Back</h1>
-    </header>
-
-    <div class="container">
-        <div class="login-form">
-            <h2>Login</h2>
-            <form id="loginForm">
-                <label for="username">Username:</label>
-                <input type="text" id="username" name="username" required>
-                <br>
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password" required>
-                <br>
-                <button type="submit">Login</button>
-            </form>
-        </div>
-
-        <div class="welcome-message" id="welcomeMessage" style="display: none;">
-            <h2>Welcome Back!</h2>
-            <p id="usernameDisplay"></p>
-        </div>
+    <div id="imageContainer">
+        <img id="SlotFull" src="SlotFull.jpg" alt="Image 1">
+        <img id="SlotEmpty" src="SlotEmpty.jpg" alt="Image 2" style="display: none;">
     </div>
+    <button onclick="toggleImage()">Toggle Image</button>
 
-    <footer>
-        <p>&copy; 2024 Tech Wizard | <a href="slot.html">Slot</a></p>
-    </footer>
-
-    <script>
-        document.getElementById("loginForm").addEventListener("submit", function(event) {
-            event.preventDefault(); // Prevent form submission
-            var username = document.getElementById("username").value;
-            var password = document.getElementById("password").value;
-
-            // Here you can perform authentication
-            // For simplicity, let's assume the login is successful
-            var isLoggedIn = true;
-
-            if (isLoggedIn) {
-                // Hide login form
-                document.querySelector(".login-form").style.display = "none";
-
-                // Display welcome message with username
-                document.getElementById("welcomeMessage").style.display = "block";
-                document.getElementById("usernameDisplay").textContent = "Welcome back, " + username + "!";
-            } else {
-                alert("Login failed. Please try again."); // Handle login failure
-            }
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
